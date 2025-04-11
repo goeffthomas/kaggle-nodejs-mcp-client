@@ -6,4 +6,3 @@ To use this:
 - Add a valid `GEMINI_API_KEY` to a/the `.env` file at the root of this repo
 - Run `npm run start`
 - Try to explore Kaggle datasets and make notebooks using them
-# kaggle-nodejs-mcp-client
