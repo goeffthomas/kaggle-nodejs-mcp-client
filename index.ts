@@ -9,7 +9,7 @@ import { ZodArray, ZodBoolean, ZodDefault, ZodEnum, ZodNullable, ZodNumber, ZodO
 // Ensure you have a valid GEMINI_API_KEY in your `.env` file
 dotenv.config();
 
-const SERVER_PATHS = ["/git/kaggle-croissant-mcp-server/build/index.js"];
+const SERVER_PATHS = ["/git/kaggle-nodejs-mcp-server/build/index.js"];
 const SYSTEM_PROMPT = `You are an expert data analyst. Use the tools available to you to answer the user's questions. 
 
 If the user asks you to analyze a specific dataset (either to answer questions or generate a python notebook), you should fetch the metadata 
@@ -18,9 +18,9 @@ for the provided dataset in order to answer the question.
 References to datasets and notebooks can be in the form of fully qualified URLs like https://www.kaggle.com/<resource>/<owner_slug>/<resource_slug> 
 or simply as a handle in the form of <owner_slug>/<resource_slug>.
 
-When generating a python notebook, first fetch any related dataset metadata so you can understand what files exist (and at which paths). Keep in mind 
-that all datasets are mounted in a "/kaggle/input" directory. For example, a notebook that has a dataset called "my-amazing-dataset", with a "awesome-data.csv" 
-inside would have the file located at "/kaggle/input/my-amazing-dataset/awesome-data.csv". Ensure that all references to files fit this pattern.`;
+When generating a python notebook, keep in mind that all datasets are mounted in a "/kaggle/input" directory. For example, a notebook that has a 
+dataset called "my-amazing-dataset", with a "awesome-data.csv" inside would have the file located at "/kaggle/input/my-amazing-dataset/awesome-data.csv". 
+Ensure that all references to files fit this pattern.`;
 
 class MCPClient {
     private mcp: Client;
